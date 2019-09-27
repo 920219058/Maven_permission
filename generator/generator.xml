@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 数据库驱动包位置 -->
+	<classPathEntry location="C:/Users/qihui/Desktop/tmp/permission/generator/mysql-connector-java-8.0.11.jar" /> <!-- 1 -->
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!--<plugin type="C:\Users\qihui\Desktop\tmp\permission\generator\src\Test"/>-->
+		<property name="mergeable" value="false"></property>
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://localhost/permission?verifyServerCertificate=false&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" userId="root" password="root">  <!-- 2 -->
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成模型的包名和位置 --> <!-- 3 -->
+		<javaModelGenerator targetPackage="com.mmall.model" targetProject="C:\Users\qihui\Desktop\tmp\permission\generator\src">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+			<property name="mergeable" value="false"></property>
+		</javaModelGenerator>
+		<!-- 生成的映射文件包名和位置 --> <!-- 4 -->
+		<sqlMapGenerator targetPackage="com.mmall.mapper" targetProject="C:\Users\qihui\Desktop\tmp\permission\generator\src">
+			<property name="mergeable" value="false"></property>
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置 --> <!-- 5 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject="C:\Users\qihui\Desktop\tmp\permission\generator\src">
+			<property name="enableSubPackages" value="false" />
+			<property name="mergeable" value="false"></property>
+		</javaClientGenerator>
+		<!-- 要生成那些表(更改tableName和domainObjectName就可以) --><!-- 6 -->
+		<table tableName="sys_user" domainObjectName="SysUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_dept" domainObjectName="SysDept" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_acl" domainObjectName="SysAcl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_acl_module" domainObjectName="SysAclModule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_role" domainObjectName="SysRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_role_acl" domainObjectName="SysRoleAcl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_role_user" domainObjectName="SysRoleUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="sys_log" domainObjectName="SysLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+	</context>
+</generatorConfiguration>
